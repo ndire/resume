@@ -1,4 +1,6 @@
-resume
+Nate Dire LaTeX Resume
 ======
 
-Personal resume
+Started from http://www.constantinos.us/blog/category/latex, but changed
+significantly.
+
