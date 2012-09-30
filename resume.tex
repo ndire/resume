@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{pbox}
+\usepackage{texlogos}
+
+\textheight=10in
+% Thsi was start from http://www.constantinos.us/blog/category/latex
+
+\pagestyle{empty}
+%\raggedbottom
+\raggedright
+
+% DEFINITIONS FOR RESUME
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newenvironment{achievements}{\begin{list}{\bf \Large $\cdot$}{\topsep 2pt \itemsep 0pt}}{\vspace*{4pt}\end{list}}
+\newenvironment{achievements2}{\begin{list}{\bf \Large $\cdot$}{\topsep 2pt \itemsep 0pt \leftmargin 12pt }}{\vspace*{4pt}\end{list}}
+\DeclareRobustCommand{\csharplogo}{\hbox{C\hspace{-0.5ex}
+    \protect\raisebox{0.5ex}
+    {\protect\scalebox{0.67}{\#}}}}
+%END RESUME DEFINITIONS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\small
+\smallskip
+\vspace*{-44pt}
+
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+  \begin{minipage}[b]{3in}
+    \textbf{\Huge \sc Nate Dire}  
+  \end{minipage}
+    & 
+  \begin{minipage}[c]{2.5in}
+    P: XXX \\
+    E: XXX \\
+    W: http://www.linkedin.com/in/ndire 
+  \end{minipage} \\
+\end{tabular*}
+
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\header{Summary}
+
+\begin{achievements2}
+\item Proven lead software engineer with contributions to all phases of SDLC
+  from research to post-release support.
+\item Grew into architect role while helping to scale enterprise storage
+  product from \$0 to over \$500M revenue.
+\item Designed and supported production code in FreeBSD user-space and kernel, running
+  on clusters up to 144 nodes and 15~PB.
+\item Advanced knowledge of C, Python, and Subversion.
+\item Familiar with \csharplogo{}, \cpluspluslogo{}, Java, R, SAS, and SQL.
+\end{achievements2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\header{Education}
+
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+  \begin{minipage}[t]{0.4\linewidth}
+    {\bf Whitman College} \\
+    B.A. Mathematics, {\em cum laude}, May 1998
+    \begin{achievements2}
+    \item Phi Beta Kappa
+    \item Presented numerical analysis research at 1998 AMS/MAA Annual
+      Meeting.
+    \end{achievements2}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.4\linewidth}
+    {\bf University of Washington} \\
+    M.S. Computer Science, June 2005 \\
+
+    {\bf UCSD Extension} \\
+    Biostatistics Certificate, December 2011 \\
+    Data Mining Certificate, September 2012 
+  \end{minipage}
+  \\
+\end{tabular*}
+
+\smallskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\header{Work History}
+
+{\bf StatFame, LLC}, Seattle, WA \\
+{\em Software Engineer} (part-time) \hfill June 2012 - present
+\begin{achievements}
+\item Built box score import scheme for multiple data sources using
+  \csharplogo{} and T-SQL for Azure deployment.  Implemented HTML scrape import.
+\end{achievements}
+
+{\bf EMC, Isilon Division} (formerly Isilon Systems), Seattle, WA \\
+  {\em Consultant Software Engineer} \hfill April 2011 - present
+  \begin{achievements}
+  \item Writing over 200-page product internal architecture document in
+    \LaTeX{} for new engineers and technical field personnel (part-time since
+    April 2012).
+  \item Presented clustered file system architecture at EMC World 2011 and 2012.
+  \item Designed and implemented new BSD vnode operation locking to enable
+    file system filter API.
+  \item Met with customers and consulted on product deployment configurations.
+  \item Managed large cluster scalability roadmap.
+  \item Member of product architecture team.
+  \end{achievements}
+
+  {\em Lead Software Engineer} \hfill August 2008 - April 2011
+  \begin{achievements}
+  \item Independently formed multi-department group to create field product
+    configuration tool used by all sales engineers.
+  \item Development lead for multiple feature maintenance releases.
+  \item Wrote Subversion wrapper in Python to enforce best practices.
+  \item Led design and implementation of 2\textsuperscript{nd}-generation, multithreaded
+    and distributed job engine which scales to 144 nodes.
+  \item Led design and implementation of file system SSD strategy.
+  \item Planned and executed roadmaps for tiering and integrity features.
+  \end{achievements}
+
+  {\em Software Engineer} \hfill March 2003 - August 2008
+  \begin{achievements}
+  \item Manually fixed on-disk corruption on live production systems.
+  \item Implemented special customer requests, from consultation to
+    specification to delivery.
+  \item Co-led design and implementation of file system quotas.
+  \item Researched and evaluated erasure codes.  Implemented Reed-Solomon
+    codes for 4-failure protection, including hand-optimized x86 assembly with
+    SSE2 instructions.
+  \item Designed and implemented mark-and-sweep collection for orphaned file
+    system structures.
+  \item Independently researched reliability analysis techniques.  Implemented
+    Monte Carlo simulator in \cpluspluslogo{}.  Coordinated Mean-Time-To-Data-Loss
+    estimation with Marketing, QA, and Operations.
+  \item Designed, implemented, and supported clustered job engine in Python,
+    which scaled to 96 nodes.
+  \end{achievements}
+
+  {\em QA Engineer} \hfill June 2001 - March 2003
+  \begin{achievements}
+  \item Researched network load balancer integration options and PXE boot for
+    test systems.
+  \item Wrote file system check-in test in Perl, which is still the core of
+    product BVT in 2012.
+  \end{achievements}
+
+\end{document}
