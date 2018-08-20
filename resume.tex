@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 \usepackage[cm,empty]{fullpage}
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{texlogos}
@@ -27,10 +27,10 @@
   \kern3pt % space between the rules
 }
 
-\newcommand{\header}[1]{\textsc{\large #1} \myline}
+\newcommand{\header}[1]{\textsc{#1} \myline}
 
-\newenvironment{achievements}{\begin{list}{\bf \Large $\cdot$}{\topsep 2pt \itemsep 0pt}}{\vspace*{4pt}\end{list}}
-\newenvironment{achievements2}{\begin{list}{\bf \Large $\cdot$}{\topsep 2pt \itemsep 0pt \leftmargin 12pt }}{\vspace*{4pt}\end{list}}
+\newenvironment{achievements}{\begin{list}{\bf \Large $\cdot$}{\topsep 2pt \itemsep 0pt}}{\vspace*{3pt}\end{list}}
+\newenvironment{achievements2}{\begin{list}{\bf \Large $\cdot$}{\topsep 2pt \itemsep 0pt \leftmargin 12pt }}{\vspace*{3pt}\end{list}}
 \DeclareRobustCommand{\csharplogo}{\hbox{C\hspace{-0.5ex}
     \protect\raisebox{0.5ex}
     {\protect\scalebox{0.67}{\#}}}}
@@ -44,120 +44,221 @@
     \textbf{\Huge \sc Nate Dire}  
   \end{minipage}
     & 
-  \begin{minipage}[c]{2.5in}
+  \begin{minipage}[c]{3in}
     P: XXX \\
     E: XXX \\
     W: \url{http://www.linkedin.com/in/ndire}
   \end{minipage} \\
 \end{tabular*}
 
-\smallskip
+\bigskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \header{Summary}
 
 \begin{achievements2}
-\item Proven lead software engineer with contributions to all phases of SDLC
-  from research to post-release support.
-\item Grew into architect role while helping to scale enterprise storage
-  product from \$0 to over \$500M revenue.
-\item Designed and supported production code in FreeBSD user-space and kernel, running
-  on high-performance coherent clusters up to 144 nodes and 15~PB.
-\item Advanced knowledge of C, Python, and Subversion.
-\item Familiar with \csharplogo{}, \cpluspluslogo{}, Git, Java, R, SAS, and SQL.
+\item Flexible, analytical, and proven data science engineer with strong systems and statistics background.
+\item Pre-series A experience at two successful Seattle startups.
+\item Ability to independently research, apply, and productize complex algorithms.
+\item Experience applying machine learning and NLP end-to-end in a B2B SaaS product.
+\item Key contributor to successful high-performance POSIX/ACID clustered file
+  system that scaled to 144 nodes and 15~PB.
+\item Advanced knowledge of file systems, distributed system, and *nix server programming.
+\item Production contributions with AWS, Chef, Clojure, Java, MongoDB, Postgres,
+  Python, Ruby, Solr, and Spark.
 \end{achievements2}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\header{Education}
-\smallskip
-
-
-\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
-  \begin{minipage}[t]{0.4\linewidth}
-    \href{http://www.whitman.edu}{\bf Whitman College} \\
-    B.A. Mathematics, {\em cum laude}, May 1998
-    \begin{achievements2}
-    \item Phi Beta Kappa
-    \item Presented numerical analysis research at 1998 AMS/MAA Annual
-      Meeting.
-    \end{achievements2}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.4\linewidth}
-    \href{http://cs.washington.edu}{\bf University of Washington} \\
-    M.S. Computer Science, June 2005 \\
-
-    {\bf UCSD Extension} \\
-    Biostatistics Certificate, December 2011 \\
-    Data Mining Certificate, September 2012 
-  \end{minipage}
-  \\
-\end{tabular*}
-
-\smallskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \header{Work History}
 
-
-\href{http://www.statfame.com}{\bf StatFame, LLC}, Seattle, WA \\
-{\em Software Engineer} (part-time) \hfill June 2012 - present
-\begin{achievements}
-\item Built box score import scheme for multiple data sources using
-  \csharplogo{} and T-SQL for Azure deployment.  Implemented HTML scrape import.
-\end{achievements}
-
-{\bf EMC, \href{http://www.isilon.com}{Isilon Division}} (formerly Isilon Systems), Seattle, WA \\
-  {\em Consultant Software Engineer} \hfill April 2011 - present
+\href{http://www.highspot.com}{\bf Highspot}, Seattle, WA \\
+{\em Principal Software Engineer} \hfill May 2013 - June 2018
   \begin{achievements}
-  \item Writing over 200-page product internal architecture document in
-    \LaTeX{} for new engineers and technical field personnel (part-time since
-    April 2012).
+
+  \item[] Data Science contributions:
+    \begin{achievements2}
+
+    %\item Logistic regression
+
+    \item Evaluated LDA topic model on office documents in both Spark and AWS
+      Comprehend.
+
+    \item Implemented matrix factorization recommendations using Spark mllib
+      ALS with time-decayed item affinity.  Added vector support in Solr to
+      compute preference scores based on user and item vectors.  Plumbed crude
+      A/B testing model to evaluate lift.
+
+    \item Built out Relevance KPI Dashboards in AWS QuickSight using custom
+      Postgres views.
+
+    \item Provisioned and configured production snapshot environment for
+      optimizing MRR via query log replay experiments.
+
+    \item Implemented custom suggested query scheme with fuzzy matching and
+      personalization.  Seeded with entity title N-grams.  Used for 20\% of
+      queries.
+
+    \item Improved media file relevance with content annotation.  Implemented
+      hinted transcription for audio and video using Google Cloud Speech API;
+      10-color text search and facets using GraphicsMagick quantization; image
+      topic and OCR search using Google Cloud Vision API.
+
+    \item Researched and resolved search pathologies with spell correction,
+      multi-term synonyms, exact match boosting, and query sanitization.
+      Reduced re-query rate by more than 10\%.
+
+    %\item Facets.  Employed Solr field collapsing to organize office documents
+    %based on user's last activity.
+ 
+    \item Worked with Data Scientist to productize slide similarity feature
+      based on TF-IDF and cosine similarity of text and images.  Independently
+      productized full document similarity with hierarchical agglomerative
+      max-link clustering for summarizing engagement analytics by document
+      cluster.
+
+    \item Planned multi-language search roadmap.  Added basic tokenization and
+      normalization support with testing by native speakers.  Implemented
+      language identification by combining CLD library and Google Cloud
+      Translation API.
+
+    %\item Worked with Data Scientist to design and implemented Solr custom
+    %  function query Java extension to power user feed relevance based on
+    %  social context.
+
+    \item Built session analysis pipeline from clickstream logging to DAU
+      queries.  Joined client-side and server-side logging.  Decorated links
+      for CTR and MRR analysis.
+
+    \item Built business intelligence pipeline from MongoDB to RDS Postgres.
+      Currently used for business metrics, billing, and to deliver custom
+      analytics to customers.
+
+    \end{achievements2}
+
+  %\item[] Feature contributions:
+  %  \begin{achievements2}
+  %  \item Facet improvements, bucketing, your activity
+  %  \item Audio and Video
+  %  \item Global lists
+  %  \item Led Content scheduling, archive and restore
+  %  \item Reviews and ratings
+  %  \item Integrated Diffbot and Thumbnail.ws APIs to provide quality thumbnails on web links.
+  %  \end{achievements2}
+
+  \item[] Infrastructure contributions:
+    \begin{achievements2}
+
+    \item Eliminated downtime deployments by researching and proposing crude
+      rolling deployment scheme.  Established git branching and tagging model
+      for releases, along with corresponding application version recorded in
+      clickstream log.
+
+    \item Measured and improved email deliverability using Sendgrid and 250ok.
+      Implemented open and click tracking via webhook updates.  Prototyped
+      recipient tracking via external server.  Designed DKIM/SPF scheme for
+      sending with customer email in from header.
+
+    \item Redesigned Solr commit model along with background work queue to be
+      more NRT-friendly, reducing average latency by 50\% and eliminating a
+      class of outages.  Implemented atomic updates for 100x faster updates to
+      numeric fields.
+
+    \item Planned application concurrency roadmap; refactored data layer for
+      tombstoning, idempotency, and optimistic updates to MongoDB and Solr,
+      including HTTP 409 and 410 responses.
+
+    \item Deployed 8-node Solr cluster behind private ELB using VPC
+      ClassicLink.  Deployed attendant Zookeeper cluster to replace single
+      instance.  Upgraded Solr approximately yearly from 4.2 to 6.5.  Wrote
+      tasks to validate index, balance replicas, and run daily rolling restart.
+
+    \item Expanded MongoDB server to replica set.  Migrated deployment to
+      CloudManager.  Set up backup scheme with tasks for developer restores of
+      production.  Planned upgrades from 2.4.x to 3.2.x, including Ruby, Java,
+      and Clojure library updates.  Proposed and implemented functional
+      partitioning scheme with second replica set.
+
+    %\item Researched and evaluated cloud-based monitoring solutions.  Added New
+    %  Relic Ruby and Java APM agents to Chef-based AWS deployment.
+
+    %\item Designed and implemented custom hostnames and custom subdomains.
+
+    \end{achievements2}
+
+  \end{achievements}
+
+%{\bf \href{http://www.statfame.com}{StatFame}}, Seattle, WA \\
+%  {\em Co-Owner/Developer} \hfill January 2013 - May 2013
+%  \begin{achievements}
+%  \item Rewrote \csharplogo{} and SQL Server back-end in 1/2 LOC and 5x
+%    performance.
+%  \item Implemented new import sources and personal URL features from
+%    CSS down to SQL; moved web role to Azure and created separate dev stack.
+%  \end{achievements}
+ 
+{\bf EMC, \href{http://www.isilon.com}{Isilon Division}} (formerly Isilon Systems), Seattle, WA \\
+  {\em Consultant Software Engineer} \hfill April 2011 - March 2013
+  \begin{achievements}
   \item Presented clustered file system architecture at EMC World 2011 and 2012.
+  \item Wrote 200+ page product internal architecture document in \LaTeX.
+  \item Led large cluster scalability roadmap.
   \item Designed and implemented new BSD vnode operation locking to enable
     file system filter API.
-  \item Met with customers and consulted on product deployment configurations.
-  \item Managed large cluster scalability roadmap.
-  \item Member of product architecture team.
+  \item Member of product architecture team; met with customers and consulted
+    on product deployment configurations.
   \end{achievements}
 
   {\em Lead Software Engineer} \hfill August 2008 - April 2011
   \begin{achievements}
   \item Independently formed multi-department group to create field product
     configuration tool used by all sales engineers.
-  \item Development lead for multiple feature maintenance releases.
-  \item Wrote Subversion wrapper in Python to enforce best practices.
-  \item Led design and implementation of 2\textsuperscript{nd}-generation, multithreaded
-    and distributed job engine which scales to 144 nodes.
+  \item Led design and implementation of multithreaded, distributed job engine which runs critical file system jobs on clusters up to 144 nodes.
   \item Led design and implementation of file system SSD strategy.
   \item Planned and executed roadmaps for tiering and integrity features.
   \end{achievements}
 
   {\em Software Engineer} \hfill March 2003 - August 2008
   \begin{achievements}
-  \item Manually fixed on-disk corruption on live production systems.
-  \item Implemented special customer requests, from consultation to
-    specification to delivery.
-  \item Co-led design and implementation of file system quotas.
   \item Researched and evaluated erasure codes.  Implemented Reed-Solomon
     codes for 4-failure protection, including hand-optimized x86 assembly with
     SSE2 instructions.
   \item Designed and implemented mark-and-sweep collection for orphaned file
     system structures.
   \item Independently researched reliability analysis techniques.  Implemented
-    Monte Carlo simulator in \cpluspluslogo{}.  Coordinated Mean-Time-To-Data-Loss
-    estimation with Marketing, QA, and Operations.
-  \item Designed, implemented, and supported clustered job engine in Python,
-    which scaled to 96 nodes.
+    Monte Carlo simulator in \cpluspluslogo{}.
+  \item Coordinated Mean-Time-To-Data-Loss (MTTDL) estimation with Marketing, QA, and Operations.
   \end{achievements}
 
-% Doesn't fit!
-%  {\em QA Engineer} \hfill June 2001 - March 2003
-%  \begin{achievements}
-%  \item Researched network load balancer integration options and PXE boot for
-%    test systems.
-%  \item Wrote file system check-in test in Perl, which is still the core of
-%    product BVT in 2012.
-%  \end{achievements}
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\header{Education}
+\bigskip
+
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+  \begin{minipage}[t]{0.45\linewidth}
+    \href{http://www.whitman.edu}{\bf Whitman College} \\
+    B.A. Mathematics, {\em cum laude}, May 1998
+    \begin{achievements2}
+    \item Phi Beta Kappa
+    \item Presented inverse eigenvalue numerical analysis research at 1998 AMS/MAA Annual
+      Meeting
+    \end{achievements2}
+
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.45\linewidth}
+    \href{http://cs.washington.edu}{\bf University of Washington} \\
+    M.S. Computer Science, June 2005 \\
+    Certificate in Natural Language Technology, March 2016 \\
+
+    {\bf Coursera} \\
+    %Machine Learning, March 2014 \\
+    Recommenders Specialization, April 2018 \\
+  \end{minipage}
+  \\
+\end{tabular*}
 
 \end{document}
+
+% vim: sw=2:ts=2:
